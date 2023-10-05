@@ -1,11 +1,49 @@
 package com.berhan.service;
 
+import com.berhan.repository.KitapRepository;
 import com.berhan.repository.KullaniciRepository;
+import com.berhan.repository.entity.Kitap;
 import com.berhan.repository.entity.Kullanici;
-import com.berhan.utility.MyFactoryService;
 
-public class KullaniciService extends MyFactoryService<Kullanici,Long> {
-    public KullaniciService() {
-        super(new Kullanici());
+import java.util.List;
+import java.util.Optional;
+
+public class KullaniciService {
+    KullaniciRepository kullaniciRepository;
+
+
+    public KullaniciService(){
+        this.kullaniciRepository = new KullaniciRepository();
+    }
+
+    public Kullanici save(Kullanici user){
+        return kullaniciRepository.save(user);
+    }
+
+    public List<Kullanici> findAll(){
+        return kullaniciRepository.findAll();
+    }
+
+    public Optional<Kullanici> findById(Long id){
+        return kullaniciRepository.findById(id);
+    }
+
+    public Iterable<Kullanici> saveAll(Iterable<Kullanici> entities){
+        return kullaniciRepository.saveAll(entities);
+    }
+    public void delete(Kullanici entity) {
+        kullaniciRepository.delete(entity);
+    }
+    public void deleteById(Long id) {
+        kullaniciRepository.deleteById(id);
+    }
+    public boolean existById(Long id) {
+        return kullaniciRepository.existById(id);
+    }
+    public List<Kullanici> findByEntity(Kullanici entity) {
+        return kullaniciRepository.findByEntity(entity);
+    }
+    public List<Kullanici> findByColumnNameAndValue(String columnName, String value) {
+        return kullaniciRepository.findByColumnNameAndValue(columnName,value);
     }
 }

@@ -1,47 +1,47 @@
 package com.berhan.controller;
 
+import com.berhan.repository.entity.Kitap;
 import com.berhan.repository.entity.Kullanici;
-import com.berhan.service.KullaniciService;
 
 import java.util.List;
 import java.util.Optional;
 
 public class KitapController {
-    KullaniciService kullaniciService;
+    KitapController kitapController;
 
 
-    public KullaniciController(){
-        this.kullaniciService = new KullaniciService();
+    public KitapController(){
+        this.kitapController = new KitapController();
     }
 
-    public Kullanici save(Kullanici user){
-        return kullaniciService.save(user);
+    public Kitap save(Kitap user){
+        return kitapController.save(user);
     }
 
-    public List<Kullanici> findAll(){
-        return kullaniciService.findAll();
+    public List<Kitap> findAll(){
+        return kitapController.findAll();
     }
 
-    public Optional<Kullanici> findById(Long id){
-        return kullaniciService.findById(id);
+    public Optional<Kitap> findById(Long id){
+        return kitapController.findById(id);
     }
 
-    public Iterable<Kullanici> saveAll(Iterable<Kullanici> entities){
-        return kullaniciService.saveAll(entities);
+    public Iterable<Kitap> saveAll(Iterable<Kullanici> entities){
+        return kitapController.saveAll(entities);
     }
-    public void delete(Kullanici entity) {
-        kullaniciService.delete(entity);
+    public void delete(Kitap entity) {
+        kitapController.delete(entity);
     }
     public void deleteById(Long id) {
-        kullaniciService.deleteById(id);
+        kitapController.deleteById(id);
     }
     public boolean existById(Long id) {
-        return kullaniciService.existById(id);
+        return kitapController.existById(id);
     }
-    public List<Kullanici> findByEntity(Kullanici entity) {
-        return kullaniciService.findByEntity(entity);
+    public List<Kitap> findByEntity(Kitap entity) {
+        return kitapController.findByEntity(entity);
     }
-    public List<Kullanici> findByColumnNameAndValue(String columnName, String value) {
-        return kullaniciService.findByColumnNameAndValue(columnName,value);
+    public List<Kitap> findByColumnNameAndValue(String columnName, String value) {
+        return kitapController.findByColumnNameAndValue(columnName,value);
     }
 }
