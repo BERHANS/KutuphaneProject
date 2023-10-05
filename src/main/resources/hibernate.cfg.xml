@@ -27,10 +27,10 @@
                 DİKKAT!! kafanıza göre her sınıfı haritalayamazsınız. çünkü hibernate
                 @Entity ile işaretlenmemiş hiç bir sınıfı kullanamaz.
         -->
-<!--        <mapping class="com.berhan.repository.entity.User"></mapping>-->
-<!--        <mapping class="com.berhan.repository.entity.Follower"></mapping>-->
+        <mapping class="com.berhan.repository.entity.Kitap"></mapping>
+        <mapping class="com.berhan.repository.entity.Kullanici"></mapping>
 <!--        <mapping class="com.berhan.repository.views.VwUrun"></mapping>-->
-<!--        <mapping class="com.berhan.repository.entity.Following"></mapping>-->
+        <mapping class="com.berhan.repository.entity.Yazar"></mapping>
 <!--        <mapping class="com.berhan.repository.entity.Musteri2"></mapping>-->
 <!--        <mapping class="com.berhan.repository.entity.SatisDetay"></mapping>-->
 
