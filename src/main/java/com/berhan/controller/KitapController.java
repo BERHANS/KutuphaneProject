@@ -26,7 +26,7 @@ public class KitapController {
         return kitapController.findById(id);
     }
 
-    public Iterable<Kitap> saveAll(Iterable<Kullanici> entities){
+    public Iterable<Kitap> saveAll(Iterable<Kitap> entities){
         return kitapController.saveAll(entities);
     }
     public void delete(Kitap entity) {

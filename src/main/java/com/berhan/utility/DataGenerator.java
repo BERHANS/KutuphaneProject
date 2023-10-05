@@ -4,11 +4,15 @@ import com.berhan.controller.KitapController;
 import com.berhan.controller.KullaniciController;
 
 import com.berhan.controller.YazarController;
+import com.berhan.enums.EKitapTur;
+import com.berhan.enums.EYayinEvi;
+import com.berhan.repository.entity.Kitap;
 import com.berhan.repository.entity.Kullanici;
 import com.berhan.repository.entity.Yazar;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 public class DataGenerator {
 
@@ -89,7 +93,132 @@ return (List<Kullanici>) kullaniciController.saveAll(List.of(kullanici,kullanici
                     .dogumTarihi(LocalDate.of(1940,1,1))
                     .build();
 
-            return
+            return (List<Yazar>) yazarController.saveAll(List.of(yazar,yazar1,yazar2,yazar3,yazar4));
+        }
+
+        public List<Kitap> kitapOlustur(List<Yazar> yazarList){
+            Kitap kitap = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.GIZEM)
+                    .yazarAdi(yazarList.get(0).getAd())
+                    .adet(30L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(300L)
+                    .yayinEvi(EYayinEvi.KIRMIZI_KEDI)
+                    .sayfaSayisi(30L)
+                    .yazarId(yazarList.get(0).getId())
+                    .ad("güccük prens")
+                    .build();
+            Kitap kitap1 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.SUC)
+                    .yazarAdi(yazarList.get(1).getAd())
+                    .adet(123542L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(95L)
+                    .yayinEvi(EYayinEvi.YASON_YAYIN_EVI)
+                    .sayfaSayisi(222L)
+                    .yazarId(yazarList.get(1).getId())
+                    .ad("Istanbul Yer6")
+                    .build();
+                    Kitap kitap2 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.BIYOGRAFIK)
+                    .yazarAdi(yazarList.get(0).getAd())
+                    .adet(80L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(70L)
+                    .yayinEvi(EYayinEvi.KIRMIZI_KEDI)
+                    .sayfaSayisi(370L)
+                    .yazarId(yazarList.get(0).getId())
+                    .ad("Antep'in Hamamları")
+                    .build();
+                    Kitap kitap3 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.MACERA)
+                    .yazarAdi(yazarList.get(1).getAd())
+                    .adet(2000L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(2000L)
+                    .yayinEvi(EYayinEvi.KIRMIZI_KEDI)
+                    .sayfaSayisi(27L)
+                    .yazarId(yazarList.get(1).getId())
+                    .ad("Muhammet Hocanın Yolu")
+                    .build();
+                    Kitap kitap4 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.GIZEM)
+                    .yazarAdi(yazarList.get(2).getAd())
+                    .adet(700L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(700L)
+                    .yayinEvi(EYayinEvi.POZITIF_YAYIN)
+                    .sayfaSayisi(700L)
+                    .yazarId(yazarList.get(2).getId())
+                    .ad("Kitapsızın Kitabı")
+                    .build();
+                    Kitap kitap5 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.BIYOGRAFIK)
+                    .yazarAdi(yazarList.get(4).getAd())
+                    .adet(300000L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(3L)
+                    .yayinEvi(EYayinEvi.KARDELEN_YAYIN_EVI)
+                            .sayfaSayisi(0L)
+                    .yazarId(yazarList.get(4).getId())
+                    .ad("Berhan'ın kitabi")
+                    .build();
+                    Kitap kitap6 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.POLISIYE)
+                    .yazarAdi(yazarList.get(3).getAd())
+                    .adet(1L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(300000L)
+                    .yayinEvi(EYayinEvi.YASON_YAYIN_EVI)
+                    .sayfaSayisi(2L)
+                    .yazarId(yazarList.get(3).getId())
+                    .ad("Zeynep'in kitabı")
+                    .build();
+                    Kitap kitap7 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.AKSIYON)
+                    .yazarAdi(yazarList.get(3).getAd())
+                    .adet(15L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(30000L)
+                    .yayinEvi(EYayinEvi.KIRMIZI_KEDI)
+                    .sayfaSayisi(1L)
+                    .yazarId(yazarList.get(3).getId())
+                    .ad("Yeliz'in kitabı")
+                    .build();
+                    Kitap kitap8 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.SUC)
+                    .yazarAdi(yazarList.get(2).getAd())
+                    .adet(3000L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(3000L)
+                    .yayinEvi(EYayinEvi.POZITIF_YAYIN)
+                    .sayfaSayisi(700L)
+                    .yazarId(yazarList.get(2).getId())
+                    .ad("Alperen Hocanın Kitabı")
+                    .build();
+                    Kitap kitap9 = Kitap.builder()
+                    .satistaMi(true)
+                    .tur(EKitapTur.OTOBIYOGRAFIK)
+                    .yazarAdi(yazarList.get(1).getAd())
+                    .adet(3000L)
+                    .isbn(UUID.randomUUID().toString())
+                    .fiyat(30L)
+                    .yayinEvi(EYayinEvi.KARDELEN_YAYIN_EVI)
+                    .sayfaSayisi(10L)
+                    .yazarId(yazarList.get(1).getId())
+                    .ad("cin ali koşuda")
+                    .build();
+                    return (List<Kitap>) kitapController.saveAll(List.of(kitap,kitap1,kitap2,kitap3,kitap4,kitap5,kitap6,kitap7,kitap8,kitap9));
+
         }
 
 
